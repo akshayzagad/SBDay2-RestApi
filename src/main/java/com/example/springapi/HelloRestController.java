@@ -24,5 +24,9 @@ import org.springframework.web.bind.annotation.*;
         public String sayHello(@RequestBody Properties properties) {
             return "Hello " + properties.getFirstName() + " " + properties.getLastName() + "!";
         }
+    @PutMapping("/put/{firstName}") //PUT http://localhost:8080/put/Akshay?lastName=Zagade
+    public String sayHello(@PathVariable String firstName, @RequestParam(value = "lastName") String lastName) {
+        return "Hello " + firstName + " " + lastName + "!";
+    }
     }
 
